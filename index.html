@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Samruddhi 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    text-align:center;
+}
+
+section{
+    padding:50px 20px;
+}
+
+h1,h2{
+    color:#ff3d68;
+}
+
+p{
+    color:#444;
+    font-size:18px;
+    max-width:720px;
+    margin:15px auto;
+    line-height:1.6;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:14px;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.gallery img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card{
+    background:white;
+    padding:35px 25px;
+    border-radius:22px;
+    max-width:440px;
+    margin:0 auto;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.buttons{
+    position:relative;
+    height:80px;
+    margin-top:30px;
+}
+
+button{
+    padding:14px 30px;
+    border:none;
+    border-radius:40px;
+    font-size:17px;
+    cursor:pointer;
+    position:absolute;
+}
+
+#yes{
+    background:#ff3d68;
+    color:white;
+    left:50%;
+    transform:translateX(-120%);
+}
+
+#no{
+    background:#ddd;
+    color:#333;
+    left:50%;
+    transform:translateX(20%);
+}
+
+#message{
+    display:none;
+    margin-top:30px;
+    font-size:18px;
+    color:#ff3d68;
+}
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:22px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section>
+    <h1>Hey Samruddhi 💕</h1>
+    <p>
+        From random laughs to quiet comfort,  
+        every moment with you feels like home.
+    </p>
+</section>
+
+<!-- GALLERY -->
+<section>
+    <h2>Us, through my eyes ✨</h2>
+
+    <div class="gallery">
+        <img src="IMG_1496.jpeg">
+        <img src="IMG_6759.jpeg">
+        <img src="PNG image 2.png">
+        <img src="PNG image 4.jpg">
+        <img src="PNG image 7.png">
+        <img src="PNG image.png">
+        <img src="bc34f228-9c4e-4730-9f46-315e13b3a753.jpeg">
+    </div>
+
+    <p>
+        Every picture here holds a feeling I never want to lose 💖
+    </p>
+</section>
+
+<!-- PROPOSAL -->
+<section>
+    <div class="card">
+        <h2>One question 🥹</h2>
+        <p>
+            Samruddhi, will you be my Valentine —  
+            today, tomorrow, and always?
+        </p>
+
+        <div class="buttons">
+            <button id="yes">Yes 💕</button>
+            <button id="no">No 🙈</button>
+        </div>
+
+        <div id="message">
+            You chose YES…  
+            and my heart couldn’t be happier.  
+            <br><br>
+            I love you, Samruddhi ❤️
+        </div>
+    </div>
+</section>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const msg = document.getElementById("message");
+
+noBtn.addEventListener("mouseover",()=>{
+    noBtn.style.left = Math.random()*60 + "%";
+    noBtn.style.top = Math.random()*60 + "%";
+});
+
+yesBtn.addEventListener("click",()=>{
+    yesBtn.style.display="none";
+    noBtn.style.display="none";
+    msg.style.display="block";
+
+    for(let i=0;i<25;i++){
+        let h=document.createElement("div");
+        h.className="heart";
+        h.innerHTML="❤️";
+        h.style.left=Math.random()*100+"vw";
+        document.body.appendChild(h);
+        setTimeout(()=>h.remove(),6000);
+    }
+});
+</script>
+
+</body>
+</html>
