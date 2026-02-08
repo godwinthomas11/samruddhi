@@ -17,7 +17,7 @@
     }
 
     .container {
-        padding: 28px 18px;
+        padding: 26px 18px 40px;
         max-width: 420px;
         margin: auto;
     }
@@ -25,7 +25,7 @@
     h1 {
         font-family: 'Playfair Display', serif;
         font-size: 32px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         color: #b03052;
     }
 
@@ -39,22 +39,25 @@
         font-family: 'Playfair Display', serif;
         font-size: 22px;
         color: #b03052;
-        margin: 14px 0 10px;
+        margin: 10px 0 12px;
     }
 
+    /* PHOTO GRID – FIXED PORTRAIT */
     .gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        gap: 14px;
         margin-bottom: 16px;
     }
 
     .gallery img {
         width: 100%;
-        border-radius: 14px;
+        aspect-ratio: 3 / 4;
         object-fit: cover;
+        border-radius: 16px;
     }
 
+    /* LOVE TEXT BOX */
     .love-box {
         background: rgba(255,255,255,0.75);
         border-radius: 18px;
@@ -64,6 +67,7 @@
         margin-bottom: 18px;
     }
 
+    /* QUESTION CARD */
     .question-box {
         background: #fff3ec;
         border-radius: 22px;
@@ -85,6 +89,7 @@
         margin-bottom: 18px;
     }
 
+    /* BUTTON AREA */
     .button-area {
         position: relative;
         height: 60px;
@@ -99,12 +104,13 @@
         cursor: pointer;
         position: absolute;
         transition: 0.25s ease;
+        white-space: nowrap;
     }
 
     .yes-btn {
         background: #ff4d6d;
         color: white;
-        left: 20%;
+        left: 18%;
     }
 
     .no-btn {
@@ -181,22 +187,17 @@
     }
 
     function yesClicked() {
-        document.body.innerHTML = `
-            <div style="
-                height:100vh;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                background:linear-gradient(180deg,#ffb6c1,#ffe4e1);
-                font-family:'Playfair Display',serif;
-                text-align:center;
-                padding:20px;
-            ">
-                <h1 style="color:#b03052;">
-                    You just made my heart the happiest 💖<br><br>
-                    I love you, Samruddhi ✨
-                </h1>
-            </div>
+        const box = document.querySelector(".question-box");
+        box.innerHTML = `
+            <h2 style="font-family:'Playfair Display',serif; color:#b03052;">
+                💖 You chose us 💖
+            </h2>
+            <p style="font-size:15px; line-height:1.6;">
+                You just made my heart smile in the best way possible.<br><br>
+                Thank you for choosing me, for choosing us, and for making
+                my world warmer just by being in it.<br><br>
+                I love you, Samruddhi ✨
+            </p>
         `;
     }
 </script>
