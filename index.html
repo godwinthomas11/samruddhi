@@ -1,142 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>For Samruddhi 💖</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;}
+    body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #ffc1cc, #ffe1d2);
+        color: #333;
+        text-align: center;
+    }
 
-body{
-    margin:0;
-    font-family:'Inter',sans-serif;
-    background:linear-gradient(180deg,#ffb3c6,#ffd6c9,#ffe9d6);
-    color:#3b2f2f;
-}
+    .container {
+        padding: 28px 18px;
+        max-width: 420px;
+        margin: auto;
+    }
 
-.section{
-    padding:36px 20px;
-    text-align:center;
-}
+    h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #b03052;
+    }
 
-/* Titles */
-h1,h2{
-    font-family:'Playfair Display',serif;
-    color:#c9184a;
-    margin-bottom:12px;
-}
+    .intro {
+        font-size: 15.5px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
 
-h1{font-size:32px;}
-h2{font-size:24px;}
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        color: #b03052;
+        margin: 14px 0 10px;
+    }
 
-p{
-    font-size:16px;
-    line-height:1.6;
-    max-width:340px;
-    margin:0 auto;
-}
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
 
-/* Gallery */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:20px;
-}
+    .gallery img {
+        width: 100%;
+        border-radius: 14px;
+        object-fit: cover;
+    }
 
-.gallery img{
-    width:100%;
-    height:210px;
-    object-fit:cover;
-    border-radius:18px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.25);
-}
+    .love-box {
+        background: rgba(255,255,255,0.75);
+        border-radius: 18px;
+        padding: 16px;
+        font-size: 14.8px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
 
-/* Card */
-.card{
-    max-width:360px;
-    margin:30px auto 0;
-    padding:26px 20px 32px;
-    border-radius:26px;
-    background:rgba(255,255,255,0.4);
-    backdrop-filter:blur(14px);
-    box-shadow:0 25px 60px rgba(0,0,0,0.25);
-}
+    .question-box {
+        background: #fff3ec;
+        border-radius: 22px;
+        padding: 22px 16px 26px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        position: relative;
+    }
 
-/* Button container — THIS IS THE KEY FIX */
-.buttons{
-    position:relative;
-    margin-top:26px;
-    height:60px;
-}
+    .question-box h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #b03052;
+    }
 
-/* YES */
-#yes{
-    position:absolute;
-    left:0;
-    top:0;
-    padding:14px 32px;
-    border:none;
-    border-radius:999px;
-    background:linear-gradient(135deg,#ff4d6d,#c9184a);
-    color:white;
-    font-size:16px;
-    font-weight:500;
-}
+    .question-box p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
 
-/* NO */
-#no{
-    position:absolute;
-    right:0;
-    top:0;
-    padding:14px 32px;
-    border:none;
-    border-radius:999px;
-    background:rgba(255,255,255,0.95);
-    font-size:15px;
-}
+    .button-area {
+        position: relative;
+        height: 60px;
+    }
 
-/* Message */
-#message{
-    display:none;
-    margin-top:24px;
-    font-family:'Playfair Display',serif;
-    font-size:20px;
-    color:#c9184a;
-}
+    .btn {
+        padding: 12px 26px;
+        border-radius: 28px;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        position: absolute;
+        transition: 0.25s ease;
+    }
 
-/* Hearts */
-.heart{
-    position:fixed;
-    bottom:-20px;
-    font-size:22px;
-    animation:float 6s linear forwards;
-}
+    .yes-btn {
+        background: #ff4d6d;
+        color: white;
+        left: 20%;
+    }
 
-@keyframes float{
-    to{transform:translateY(-120vh);opacity:0;}
-}
+    .no-btn {
+        background: #f1f1f1;
+        color: #333;
+        left: 55%;
+    }
 </style>
 </head>
 
 <body>
+<div class="container">
 
-<div class="section">
     <h1>Hey Samruddhi 💕</h1>
-  <p>
-   Loving You,<br>
-     feels like finding a place where my heart finally belongs.  
-    With you, every laugh, every silence, and every small moment feels meaningful   
-    because being with you feels like home.
-</p>
 
-</div>
+    <div class="intro">
+        Loving you feels like finding a place where my heart finally belongs.
+        With you, every laugh, every silence, and every small moment feels meaningful —
+        because being with you feels like home.
+    </div>
 
-<div class="section">
-    <h2>Us, through my eyes ✨</h2>
+    <div class="section-title">Us, through my eyes ✨</div>
 
     <div class="gallery">
         <img src="IMG_1496.jpeg">
@@ -149,91 +139,66 @@ p{
         <img src="bc34f228-9c4e-4730-9f46-315e13b3a753.jpeg">
     </div>
 
-    <p style="margin-top:18px;">
-    Every photo here is a memory I carry with me —  
-    moments that remind me how lucky I am to love you. 💖
-</p>
+    <div class="love-box">
+        Every photo here holds a piece of my heart.
+        You make my days lighter, my smiles real, and my life better just by being in it.
+        Loving you feels easy, comforting, and right — always.
+    </div>
 
-<p style="margin-top:20px; font-size:15.5px; line-height:1.7;">
-    Samruddhi,<br><br>
-    Loving you has changed the way I see everything.  
-    You bring calm into my chaos, warmth into my quiet moments,  
-    and happiness into places I didn’t even know were empty.<br><br>
-
-    With you, I feel complete — not because you fill something missing,  
-    but because life feels better when I’m sharing it with you.<br><br>
-
-    You make me smile without trying,  
-    you understand me without words,  
-    and you make every ordinary day feel special just by being in it.<br><br>
-
-    I don’t promise perfection,  
-    but I promise honesty, effort, laughter, and love — always.
-</p>
-
-</div>
-
-<div class="section">
-    <div class="card">
-        <h2>One question 🥹</h2>
+    <div class="question-box">
+        <h2>One question 🥺</h2>
         <p>
             Samruddhi,<br>
-            will you be my Valentine ?<br>
-            today, tomorrow, and always?
+            will you be my Valentine — today, tomorrow, and always?
         </p>
 
-        <div class="buttons">
-            <button id="yes">Yes 💖</button>
-            <button id="no">No 🙈</button>
-        </div>
-
-        <div id="message">
-            You chose YES…<br><br>
-            and my heart chose you forever ❤️
+        <div class="button-area">
+            <button class="btn yes-btn" onclick="yesClicked()">Yes 💖</button>
+            <button class="btn no-btn" id="noBtn">No 🙈</button>
         </div>
     </div>
+
 </div>
 
 <script>
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
-const msg = document.getElementById("message");
-const box = document.querySelector(".buttons");
+    const noBtn = document.getElementById("noBtn");
+    const area = document.querySelector(".button-area");
 
-let activated = false;
+    noBtn.addEventListener("click", moveNo);
 
-function dodge(){
-    const pad = 4;
-    const maxX = box.offsetWidth - noBtn.offsetWidth - pad;
-    const maxY = box.offsetHeight - noBtn.offsetHeight - pad;
+    function moveNo() {
+        const areaRect = area.getBoundingClientRect();
+        const btnRect = noBtn.getBoundingClientRect();
 
-    noBtn.style.left = Math.random()*maxX + "px";
-    noBtn.style.top  = Math.random()*maxY + "px";
-}
+        const maxX = areaRect.width - btnRect.width;
+        const maxY = areaRect.height - btnRect.height;
 
-noBtn.addEventListener("touchstart",()=>{
-    activated = true;
-    dodge();
-});
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
 
-noBtn.addEventListener("mouseover",()=>{
-    if(activated) dodge();
-});
-
-yesBtn.addEventListener("click",()=>{
-    noBtn.style.display="none";
-    yesBtn.style.display="none";
-    msg.style.display="block";
-
-    for(let i=0;i<40;i++){
-        const h=document.createElement("div");
-        h.className="heart";
-        h.innerHTML="❤️";
-        h.style.left=Math.random()*100+"vw";
-        document.body.appendChild(h);
-        setTimeout(()=>h.remove(),6000);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
     }
-});
+
+    function yesClicked() {
+        document.body.innerHTML = `
+            <div style="
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background:linear-gradient(180deg,#ffb6c1,#ffe4e1);
+                font-family:'Playfair Display',serif;
+                text-align:center;
+                padding:20px;
+            ">
+                <h1 style="color:#b03052;">
+                    You just made my heart the happiest 💖<br><br>
+                    I love you, Samruddhi ✨
+                </h1>
+            </div>
+        `;
+    }
 </script>
 
 </body>
