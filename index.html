@@ -5,120 +5,125 @@
 <title>For Samruddhi 💖</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Premium mobile fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+*{box-sizing:border-box;}
+
 body{
     margin:0;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(180deg,#ffb3c6 0%, #ffd6c9 50%, #ffe9d6 100%);
+    color:#3b2f2f;
+}
+
+/* ----- SECTION WRAPPER (NO GAPS) ----- */
+.section{
+    padding:36px 20px;
     text-align:center;
 }
 
-section{
-    padding:40px 20px;
-    animation:fadeIn 1.2s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
-
+/* ----- HEADINGS ----- */
 h1{
-    color:#ff2f68;
-    margin-bottom:10px;
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    color:#c9184a;
+    margin:0 0 10px;
 }
 
 h2{
-    color:#ff3d68;
-    margin-top:10px;
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    color:#c9184a;
+    margin:0 0 14px;
 }
 
 p{
-    color:#444;
-    font-size:18px;
-    max-width:720px;
-    margin:10px auto;
+    font-size:16px;
     line-height:1.6;
+    margin:0 auto;
+    max-width:340px;
+    opacity:0.9;
 }
 
+/* ----- DIVIDER ----- */
 .divider{
-    font-size:22px;
-    margin:25px 0 10px;
-    color:#ff3d68;
+    margin:18px 0;
+    font-size:20px;
 }
 
+/* ----- GALLERY ----- */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:14px;
-    max-width:900px;
-    margin:25px auto 10px;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:20px;
 }
 
 .gallery img{
     width:100%;
-    height:240px;
+    height:210px;
     object-fit:cover;
-    border-radius:20px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
+/* ----- GLASS CARD ----- */
 .card{
-    background:white;
-    padding:35px 25px;
-    border-radius:24px;
-    max-width:460px;
-    margin:0 auto;
-    box-shadow:0 25px 50px rgba(0,0,0,0.35);
+    margin:30px auto 0;
+    max-width:360px;
+    padding:28px 20px 40px;
+    border-radius:26px;
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 25px 60px rgba(0,0,0,0.25);
 }
 
-.buttons{
-    position:relative;
-    height:90px;
-    margin-top:30px;
-}
-
-button{
-    padding:14px 32px;
-    border:none;
-    border-radius:40px;
-    font-size:17px;
-    cursor:pointer;
-    position:absolute;
-}
-
+/* ----- BUTTONS ----- */
 #yes{
-    background:#ff3d68;
+    margin-top:24px;
+    padding:14px 34px;
+    border:none;
+    border-radius:999px;
+    background:linear-gradient(135deg,#ff4d6d,#c9184a);
     color:white;
-    left:50%;
-    transform:translateX(-120%);
+    font-size:16px;
+    font-weight:500;
 }
 
 #no{
-    background:#eee;
+    position:fixed;
+    padding:12px 26px;
+    border:none;
+    border-radius:999px;
+    background:rgba(255,255,255,0.9);
     color:#333;
-    left:50%;
-    transform:translateX(20%);
+    font-size:15px;
+    z-index:999;
 }
 
+/* ----- LOVE MESSAGE ----- */
 #message{
     display:none;
-    margin-top:30px;
-    font-size:19px;
-    color:#ff3d68;
-    animation:fadeIn 1s ease;
+    margin-top:26px;
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    color:#c9184a;
 }
 
+/* ----- HEARTS ----- */
 .heart{
     position:fixed;
     bottom:-20px;
     font-size:22px;
-    animation:float 6s linear infinite;
+    animation:float 6s linear forwards;
 }
 
 @keyframes float{
     to{
-        transform:translateY(-110vh);
+        transform:translateY(-120vh);
         opacity:0;
     }
 }
@@ -128,18 +133,17 @@ button{
 <body>
 
 <!-- INTRO -->
-<section>
+<div class="section">
     <h1>Hey Samruddhi 💕</h1>
     <p>
         From random laughs to quiet comfort,<br>
         every moment with you feels like home.
     </p>
-
-    <div class="divider">💖 💖 💖</div>
-</section>
+    <div class="divider">💗 ✨ 💗</div>
+</div>
 
 <!-- GALLERY -->
-<section>
+<div class="section">
     <h2>Us, through my eyes ✨</h2>
 
     <div class="gallery">
@@ -153,15 +157,15 @@ button{
         <img src="bc34f228-9c4e-4730-9f46-315e13b3a753.jpeg">
     </div>
 
-    <p>
-        Every picture here holds a feeling I never want to lose 💗
+    <p style="margin-top:18px;">
+        Every picture here holds a feeling I never want to lose 💖
     </p>
 
     <div class="divider">✨ 💕 ✨</div>
-</section>
+</div>
 
-<!-- PROPOSAL -->
-<section>
+<!-- QUESTION -->
+<div class="section">
     <div class="card">
         <h2>One question 🥹</h2>
         <p>
@@ -170,36 +174,42 @@ button{
             today, tomorrow, and always?
         </p>
 
-        <div class="buttons">
-            <button id="yes">Yes 💕</button>
-            <button id="no">No 🙈</button>
-        </div>
+        <button id="yes">Yes 💖</button>
 
         <div id="message">
             You chose YES…<br><br>
-            and my heart has never been happier 💖<br><br>
-            I love you, Samruddhi ❤️
+            and my heart chose you forever ❤️
         </div>
     </div>
-</section>
+</div>
+
+<button id="no">No 🙈</button>
 
 <script>
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const msg = document.getElementById("message");
 
-noBtn.addEventListener("mouseover",()=>{
-    noBtn.style.left = Math.random()*60 + "%";
-    noBtn.style.top = Math.random()*60 + "%";
-});
+/* Infinite dodge game */
+function moveNo(){
+    const padding = 20;
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
 
+noBtn.addEventListener("touchstart", moveNo);
+noBtn.addEventListener("mouseover", moveNo);
+
+/* YES */
 yesBtn.addEventListener("click",()=>{
-    yesBtn.style.display="none";
     noBtn.style.display="none";
+    yesBtn.style.display="none";
     msg.style.display="block";
 
-    for(let i=0;i<30;i++){
-        let h=document.createElement("div");
+    for(let i=0;i<40;i++){
+        const h=document.createElement("div");
         h.className="heart";
         h.innerHTML="❤️";
         h.style.left=Math.random()*100+"vw";
