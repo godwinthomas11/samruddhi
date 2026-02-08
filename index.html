@@ -127,6 +127,20 @@ p{
         opacity:0;
     }
 }
+    .buttons{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    margin-top:24px;
+    height:60px;
+}
+
+#no{
+    position:absolute;
+    right:0;
+    top:0;
+}
+
 </style>
 </head>
 
@@ -182,25 +196,23 @@ p{
         </div>
     </div>
 </div>
-
-<button id="no">No 🙈</button>
+<div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙈</button>
+</div>
 
 <script>
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const msg = document.getElementById("message");
+const container = document.querySelector(".buttons");
 
-/* Place NO button initially in center-bottom */
-function placeNoInitial(){
-    noBtn.style.left = (window.innerWidth / 2 - noBtn.offsetWidth / 2) + "px";
-    noBtn.style.top = (window.innerHeight * 0.7) + "px";
-}
+let gameStarted = false;
 
-/* Infinite dodge game */
 function moveNo(){
-    const padding = 20;
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+    const pad = 5;
+    const maxX = container.offsetWidth - noBtn.offsetWidth - pad;
+    const maxY = container.offsetHeight - noBtn.offsetHeight - pad;
 
     const x = Math.random() * maxX;
     const y = Math.random() * maxY;
@@ -209,20 +221,27 @@ function moveNo(){
     noBtn.style.top = y + "px";
 }
 
-/* Make sure NO appears on load */
-window.onload = placeNoInitial;
+/* Start game ONLY after first No click */
+noBtn.addEventListener("touchstart", ()=>{
+    if(!gameStarted){
+        gameStarted = true;
+    }
+    moveNo();
+});
 
-/* Dodge forever */
-noBtn.addEventListener("touchstart", moveNo);
-noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("mouseover", ()=>{
+    if(gameStarted){
+        moveNo();
+    }
+});
 
-/* YES button logic */
-yesBtn.addEventListener("click",()=>{
+/* YES logic */
+yesBtn.addEventListener("click", ()=>{
     noBtn.style.display="none";
     yesBtn.style.display="none";
     msg.style.display="block";
 
-    for(let i=0;i<40;i++){
+    for(let i=0;i<35;i++){
         const h=document.createElement("div");
         h.className="heart";
         h.innerHTML="❤️";
@@ -232,6 +251,7 @@ yesBtn.addEventListener("click",()=>{
     }
 });
 </script>
+
 
 
 </body>
