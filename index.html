@@ -190,19 +190,33 @@ const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const msg = document.getElementById("message");
 
+/* Place NO button initially in center-bottom */
+function placeNoInitial(){
+    noBtn.style.left = (window.innerWidth / 2 - noBtn.offsetWidth / 2) + "px";
+    noBtn.style.top = (window.innerHeight * 0.7) + "px";
+}
+
 /* Infinite dodge game */
 function moveNo(){
     const padding = 20;
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding);
+    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
 }
 
+/* Make sure NO appears on load */
+window.onload = placeNoInitial;
+
+/* Dodge forever */
 noBtn.addEventListener("touchstart", moveNo);
 noBtn.addEventListener("mouseover", moveNo);
 
-/* YES */
+/* YES button logic */
 yesBtn.addEventListener("click",()=>{
     noBtn.style.display="none";
     yesBtn.style.display="none";
@@ -218,6 +232,7 @@ yesBtn.addEventListener("click",()=>{
     }
 });
 </script>
+
 
 </body>
 </html>
